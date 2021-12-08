@@ -1,0 +1,24 @@
+//paleta//
+$violeta-oscuro: #01012b;
+$amarillo-fluor: #defe47;
+$celeste-electrico: #00b3fe;
+$clarito: #d1f7ff;
+$violeta-electrico: #7700a6;
+
+//font
+$font: 'Titillium Web', sans-serif;
+
+//mixins
+@mixin borders {
+	border-radius: 10px;
+}
+
+@mixin flex-row{
+    display: flex;
+	flex-direction: row;
+}
+
+@mixin flex-column{
+    display: flex;
+	flex-direction: column;
+}

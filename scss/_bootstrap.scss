@@ -1,0 +1,78 @@
+.bg-light {
+    background-color: $violeta-electrico!important;
+}
+
+nav{
+	box-shadow: 0 0 30px 0 $amarillo-fluor;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: $amarillo-fluor;
+    font: bold 1.8rem $font;
+    padding: 20px;
+    &:hover {
+        color: $celeste-electrico;
+    }    
+}
+
+.navb {
+    margin-left: 7%;
+}
+
+.me-2 {
+    margin-left: 2rem;
+}
+
+.btn-outline-success {
+    color: $celeste-electrico;
+    border-color: $celeste-electrico;
+    margin-right: 3rem;
+}
+
+.btn-primary {
+    color: $violeta-electrico;
+    background-color: $amarillo-fluor;
+    border-color: $violeta-oscuro;
+    @include borders;
+    font: 700 1.5rem $font;
+    padding: 5px;
+    margin-right: 20px;
+    &:hover {
+        color: $amarillo-fluor;
+        border-color: $violeta-electrico;
+        background-color: $violeta-electrico;
+        box-shadow:  16px 16px 21px #b6d03a,
+                    -16px -16px 21px #ffff54;
+    }
+}
+
+.modal-body {
+    flex: none;
+}    
+
+.modal-content {
+    background-color: $violeta-electrico;
+    box-shadow:  6px 6px 4px #b6d03a,
+                    -6px -6px 4px #ffff54;
+    @include borders;
+    height: 300px;
+}
+
+.btn-close {
+    opacity: 1;
+    &:hover {
+        opacity: 0.3;
+    }
+}
+
+.modal-header {
+    border-bottom: rgba($amarillo-fluor, 0.5) solid 1px;
+}
+
+.fa {
+    margin-left: 50px;
+    &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}

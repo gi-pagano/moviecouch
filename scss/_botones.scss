@@ -1,0 +1,134 @@
+.btnVer {
+    padding: 0.5em;
+    width: 30%;
+    border: 2px solid $amarillo-fluor;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font: 1rem $font;
+    color: #ddd;
+    transition: .3s;
+    z-index: 1;
+
+    color: $amarillo-fluor;
+    @include borders;
+  
+    &::before {
+      content: '';
+      width: 0;
+      height: 300%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: $amarillo-fluor;
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+  }
+  
+  .btnVer:hover {
+    &::before {
+      width: 105%;
+    }
+    color: $violeta-oscuro;
+}  
+  
+.btn-suscripcion {
+    text-align: center;
+    background-color: $amarillo-fluor;
+    @include borders;
+    color: $violeta-oscuro;
+    font: 800 2rem $font;
+    margin-top: 100px;
+    width: 20%;
+    padding: 1em;
+    &:hover {
+      background-color: $violeta-electrico;
+      color: $amarillo-fluor;
+      box-shadow:  8px 8px 10px #b6d03a,
+                  -8px -8px 10px #ffff54;
+  }
+}  
+
+.btnEnviar {
+    text-align: center;
+    background-color: $amarillo-fluor;
+    @include borders;
+    color: $violeta-oscuro;
+    font: bold 2rem $font;
+    margin: 5% auto auto 38%;
+    width: 20%;
+    padding: 0.3em;
+    &:hover {
+        background-color: $violeta-electrico;
+        color: $amarillo-fluor;
+        box-shadow:  8px 8px 10px #b6d03a,
+                    -8px -8px 10px #ffff54;
+    }
+}
+
+.btnBuscar {
+    width: 20%;
+    margin-right: 20px;
+    background-color: $amarillo-fluor;
+    @include borders;
+    color: $violeta-oscuro;
+    font: bold 1.5rem $font;
+    &:hover {
+        background-color: $violeta-electrico;
+        color: $amarillo-fluor;
+        box-shadow:  8px 8px 10px #b6d03a,
+                    -8px -8px 10px #ffff54;
+    }
+}
+
+#usd {
+  margin-left: 20px;
+  background-color: $amarillo-fluor;
+  @include borders;
+  color: $violeta-electrico;
+  border-color: $violeta-electrico;
+  font: bold 1.5rem $font;
+  padding: 5px 20px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+#ars {
+    margin-left: 20px;
+    background-color: $violeta-electrico;
+    @include borders;
+    color: $amarillo-fluor;
+    border-color: $amarillo-fluor;
+    font: bold 1.5rem $font;
+    padding: 5px 20px;
+    &:hover {
+      opacity: 0.5;
+    }
+}
+
+#ocultarLista {
+    display: none;
+}
+
+.btnRtg {
+  align-self: center;
+}
+
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 4%;
+  z-index: 1;
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}

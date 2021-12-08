@@ -1,0 +1,108 @@
+@media only screen and (min-width: 990px) and (max-width: 1071px) {
+    .navb {
+        margin-left: -30%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-toggler-icon {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .btnEnviar {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	ul {
+		.booking-card {
+			.book-container {
+				.content {
+					opacity: 1;
+					transform: translateY(0px);
+                    .btn {
+                        background-color: $violeta-oscuro;
+                        margin-top: 250px;
+                        width: 50%;
+                        font-size: 1.5rem;
+                        padding: 5px;
+                    }
+				}
+			}
+			.informations-container {
+				display: none;
+			}
+		}
+	}
+
+    .btnRtg {
+        width: 70px;
+    }
+}
+
+@media only screen and (min-width: 478px) and (max-width: 768px) {
+
+    .btn-suscripcion {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+	ul {
+		.booking-card {
+            width: 150px;
+            height: 250px;
+        }
+    }
+
+    .btnEnviar {
+        font-size: 1rem;
+        width: 100px;
+    }
+
+    .btnBuscar {
+        width: 100px;
+    }
+}
+
+
+@media only screen and (min-width: 478px) and (max-width: 541px) {
+    .navbar-brand {
+        margin-right: -8rem;
+    }
+}
+
+@media only screen and (max-width: 478px) {
+
+    .btn-suscripcion {
+        font-size: 1.2rem;
+        width: 100px;
+    }
+
+    .tabla {
+        display: none;
+    }
+
+    .layout2 {
+        @include flex-column;
+    }
+
+    .suscripcionLayout {
+        border-right: none;
+    }
+
+    #formulario {
+        width:200px;
+        margin:10px auto 2px auto;
+    }  
+
+    .modal-content {
+        width: 60%;
+    }
+
+    #divOculto {
+        width: 60%;
+    }
+}  

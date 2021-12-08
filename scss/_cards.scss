@@ -1,0 +1,160 @@
+.card {
+
+    background-color: transparent;
+    } h4 {
+        background-color: $violeta-electrico;
+        @include borders;
+        margin: 3px 10px;
+    } h2 {
+        margin: 8px 2px;
+    }    
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	.booking-card {
+		position: relative;
+		width: 200px;
+        height: 280px;
+		@include flex-column;
+        box-shadow:  8px 8px 10px $violeta-electrico,
+                    -8px -8px 10px $violeta-electrico;
+		flex: 0 0 200px;
+		margin: 20px;
+		margin-bottom: 30px;
+		border-radius: 10px;
+		overflow: hidden;
+		background-position: center center;
+		background-size: cover;
+		text-align: center;
+		transition: 0.3s;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(10, 72, 112, 0);
+			transition: 0.3s;
+		}
+		&:hover {
+			border-radius: 20px;
+			box-shadow:  20px 20px 25px $violeta-electrico,
+                    -20px -20px 25px $violeta-electrico;
+			
+		}
+		.book-container {
+			height: 200px;
+			.content {
+				position: relative;
+				opacity: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				width: 100%;
+				transform: translateY(-200px);
+				transition: 0.3s;
+				.btn {
+					border: 3px solid $amarillo-fluor;
+                    @include borders;
+                    width: 70%;
+					padding: 10px 15px;
+					background: none;
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: 2rem;
+					color: $amarillo-fluor;
+					cursor: pointer;
+					transition: 0.3s;
+					&:hover {
+						background: $violeta-oscuro;
+                        box-shadow:  8px 8px 10px $violeta-electrico,
+                        -8px -8px 10px $violeta-electrico;
+					}
+				}
+			}
+		}
+		.informations-container {
+			flex: 1 0 auto;
+			background: $violeta-oscuro;
+			transform: translateY(206px);
+			transition: 0.3s;
+			.title {
+				position: relative;
+				margin-bottom: 5px;
+				font-weight: bold;
+				font-size: 1.4rem;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 0px;
+					width: 50px;
+					margin: auto;
+				}
+			}
+		}
+		&:hover {
+			&::before {
+				background: rgba(10, 72, 112, 0.6);
+			}
+			.book-container {
+				.content {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+			}
+			.informations-container {
+				transform: translateY(0px);
+			}
+		}
+	}
+}
+
+//FILTRO
+.radio {
+	background: $amarillo-fluor;
+	padding: 4px 20px;
+	@include borders;
+	box-shadow:  6px 6px 4px $celeste-electrico,
+                    -6px -6px 4px $violeta-electrico;
+	position: relative;
+    margin: auto 50px;
+}
+.radio input {
+	width: auto;
+	height: 100%;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	@include borders;
+	padding: 4px 15px;
+	background: $amarillo-fluor;
+	color: $violeta-electrico;
+	font: 1.4rem $font;
+	transition: all 100ms linear;
+	&:hover {
+		background: $violeta-electrico;
+		color: $amarillo-fluor;
+	}
+}
+
+.radio input:checked {
+	background-image: linear-gradient(180deg, $violeta-electrico, $celeste-electrico);
+	color: $clarito;
+	box-shadow: 0 2px 2px #0000002e;
+	text-shadow: 0 2px 0px #79485f7a;
+}
+
+.radio input:before {
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}

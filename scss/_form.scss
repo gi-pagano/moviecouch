@@ -1,0 +1,113 @@
+
+#formulario {
+    @include flex-column;
+    width:400px;
+    margin:10px auto 2px auto;
+    .loginInput {
+        padding:5px;
+        margin:5px;
+        @include borders;
+        background-color:$amarillo-fluor;
+        color: $violeta-electrico;
+        font: 1.3rem $font;
+        width: 100%;
+    }
+}
+
+.tamanioBtn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 1.5rem;
+}
+
+.ingresar {
+    @include flex-row;
+    margin-top: 5px;
+    justify-content: space-around;
+}
+
+#formularioRegistro {
+    display: none;
+    flex-direction: column;
+    width:50%;
+    margin:50px auto;
+    input {
+        width: 100%;
+        margin:5px;
+        padding:10px;
+        @include borders;
+        background-color:$violeta-electrico;
+        color: $amarillo-fluor;
+        font: 1.4rem $font;
+    }
+    label {
+        margin:2px;
+        padding:2px;
+        font: 1.5rem $font;
+        color: $amarillo-fluor;
+    }
+    select {
+        margin:5px;
+        padding:10px;
+        @include borders;
+        background-color:$violeta-electrico;
+        color: $amarillo-fluor;
+        font: 1.4rem $font;
+    }
+}
+
+.aparecer {
+    display: flex;
+}
+
+#formularioAdmin {
+    position: absolute;
+    z-index: 11111;
+    top: 10px;
+    left: 20%;
+    background-color: $violeta-oscuro;
+    box-shadow: 0 0 30px 0 $amarillo-fluor;
+    display: none;
+    width:60%;
+    @include borders;
+    padding: 30px;
+    input {
+        width: 90%;
+        margin:5px auto 5px 15px;
+        padding:10px;
+        @include borders;
+        background-color:$violeta-electrico;
+        color: $amarillo-fluor;
+        font: 1.6rem $font;
+    }
+    label {
+        margin:5px auto 5px 20px;
+        padding:2px;
+        font: 1.5rem $font;
+        color: $amarillo-fluor;
+    }
+    select {
+        margin:5px auto 5px 20px;
+        width: 90%;
+        padding:10px;
+        @include borders;
+        background-color:$violeta-electrico;
+        color: $amarillo-fluor;
+        font: 1.4rem $font;
+    }
+    button {
+        margin:2% auto 2% 40%;
+        box-shadow: 0 0 30px 0 $amarillo-fluor;
+    }
+}
+
+.barraSelect {
+    margin:5px auto 5px 20px;
+    width: 90%;
+    padding:10px;
+    @include borders;
+    background-color:$violeta-electrico;
+    color: $amarillo-fluor;
+    font: 1.4rem $font;
+    }
+

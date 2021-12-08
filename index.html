@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="streaming, peliculas, series, anime, multimedia">
+    <meta name="description" content="Sitio de streaming de peliculas, series, anime y mucho mas">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Work+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><!--BS-->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>MovieCouch - tu lugar de entretenimiento</title>
+</head>
+
+<body>
+    <header>
+      <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                  <img class="logo" src="images/logo1.png" alt="MovieCouch logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navb me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#peliculas">Películas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#series">Series</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#anime">Anime</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#registro">Suscripción</a>
+                  </li> 
+                </ul>
+                <!-- Boton del popup "iniciar sesión"-->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Iniciar sesión
+                </button>
+              </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Popup de login -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Iniciar sesión</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="formulario">
+              <div class="formField">
+                <input class= "loginInput" type="text" placeholder="Usuario" id="username" required> 
+                <small></small>
+              </div> 
+              <div class="formField"> 
+                <input class= "loginInput" type="password" placeholder="Contraseña" id="passwordLogin" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                <small></small>
+              </div>   
+              <div class="ingresar">
+                <div class="formField">
+                  <button type="submit" class="btnVer tamanioBtn" id="login">Ingresar</button>
+                </div>  
+                <div class="layoutForm">
+                  <a href="#formularioAdmin" id="enlaceAdmin" class="forgot">Administrador</a> <!--Abre form de administrador -->
+                  <a href="#registro" id="enlaceRegistro" class="registro">¡Registrate ahora!</a> <!--Dirige al form de registro -->
+                </div>  
+              </div>  
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h1 id="bienvenida">Bienvenido a MovieCouch</h1>
+
+    <a><img id="toTop" src="images/back-to-top.jpg" alt="subir"></img></a> <!--Boton para subir-->
+
+    <div id="filtros" class="layout2"><!--FILTROS-->
+      <div class="radio">
+        <input label="Todos" type="radio" id="one" name="filter" value="all" checked>
+        <input label="Películas" type="radio" id="two" name="filter" value="peliculas">
+        <input label="Series" type="radio" id="three" name="filter" value="series">
+        <input label="Anime" type="radio" id="four" name="filter" value="anime">
+        <input label="Acción" type="radio" id="accion" name="filter" value="accion">
+        <input label="Comedia" type="radio" id="comedia" name="filter" value="comedia">
+        <input label="Drama" type="radio" id="drama" name="filter" value="drama">
+        <input label="Fantasía" type="radio" id="fantasia" name="filter" value="fantasia">        
+        <input label="Infantil" type="radio" id="infantil" name="filter" value="infantil">
+        <input label="Romance" type="radio" id="romance" name="filter" value="romance">
+        <input label="Terror" type="radio" id="terror" name="filter" value="terror">
+      </div>
+    </div>
+
+    <section id="divOculto">
+      <button id="cerrarDiv" class="btn btn-danger">X</button>
+      <div id="divVistos" ></div> <!--popup para contenido visto y para que el usuario valore lo que vio-->
+    </section>
+  
+    <section> <!--Secciones de contenido multimedia-->
+        <h2 id="peliculas" class="mrg">Películas</h2> <!--peliculas-->
+        <div class="containerPelis">
+          <div class="tabla"> <!--Tabla para agregar historial visto por el usuario-->
+            <h2 class="viendo">Tu historial</h2>
+            <p class="viendoLayout" id="contenedorVistos"></p>
+          </div>
+          <div id="listaPelis" class="layout"></div>
+        </div>
+    </section>
+    
+    <section> <!--Series-->
+        <h2 id="series" class="mrg">Series</h2>
+        <div id="listaSeries" class="layout"></div>
+    </section>
+
+    <section> <!--Anime-->
+        <h2 id="anime" class="mrg">Anime</h2>
+        <div id="listaAnime" class="layout"></div>
+    </section>
+
+    <section class="marginExtra"> <!--Info tipos de Suscripción-->
+        <h2  class="mrg">Conocé nuestros tipos de suscripción <button id="usd">USD</button><button class="hide"id="ars">ARS</button></h2>
+        <div class="layout2">
+          <div class="suscripcionLayout">
+            <h3>Suscripción mensual</h3>
+            <p class="estiloP" id="mensual"></p>
+            <p class="estiloUsd" id="mensualUsd"></p>
+          </div>  
+          <div class="suscripcionLayout">
+            <h3>Suscripción trimestral</h3>
+            <p class="estiloP" id="trimestral"></p>
+            <p class="estiloUsd" id="trimestralUsd"></p>
+          </div> 
+          <div class="suscripcionLayout">
+            <h3>Suscripción semestral</h3>
+            <p class="estiloP" id="semestral"></p>
+            <p class="estiloUsd" id="semestralUsd"></p>
+          </div> 
+          <div class="suscripcionLayout">
+            <h3>Suscripción anual</h3>
+            <p class="estiloP" id="anual"></p>
+            <p class="estiloUsd" id="anualUsd"></p>
+          </div>  
+        </div>
+    </section>
+
+    <section class="layoutRegistro"> <!--Formulario de registro-->
+      <button id="registro" class="btn-suscripcion">¡Suscribirme ahora!</button>
+
+      <form id="formularioRegistro" method="post" action="https://jsonplaceholder.typicode.com/posts"> 
+        <div class="formField inputContainer">
+          <label for="nombre">Nombre y apellido:</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="off" required>  
+          <small></small>
+        </div>
+        <div class="formField inputContainer">
+          <label for="usuario">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" autocomplete="off" required>
+          <small></small>
+        </div>
+        <div class="formField inputContainer">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" autocomplete="off" required> 
+          <small></small>
+        </div>
+        <div class="formField inputContainer">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+          <small></small>
+        </div>
+        <div class="formField inputContainer">
+          <label for="password2">Reingresa la contraseña:</label>
+          <input type="password" id="password2" name="password2" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+          <small></small>
+        </div>
+        <div class="formField">
+          <label for="suscripcion">Elegí el tipo de suscripción:</label>
+          <select id="tipoSuscripcion" name="suscripcion">
+              <option value="mensual">Mensual</option>
+              <option value="trimestral">Trimestral</option>
+              <option value="semestral">Semestral</option>
+              <option value="anual">Anual</option>
+          </select>
+        </div> 
+        <div class="formField">
+          <label for="cuotas">Elegí el número de cuotas:</label>
+          <select id="cuotas" name="cuotas">
+              <option value="1">1 cuota</option>
+              <option value="3">3 cuotas</option>
+              <option value="6">6 cuotas</option>
+          </select>
+          <small></small>
+        </div>
+        <div>
+          <button type="submit" class="btnEnviar" id="btnRegistro">Enviar</button>
+          <div class="error" id="status"></div>
+        </div>
+      </form>
+      <p id="envioExitoso" class="oculto">Gracias por suscribirte a nuestro servicio de streaming. ¡Ya podés acceder a todo el contenido!</p>
+    </section>
+
+    <section>
+      <form id="formularioAdmin"> <!--FORMULARIO DE ADMINISTRADOR puse varios select para simplificar la corrección-->
+        <h3>Admin, gestioná contenido multimedia aquí <span id="cerrarAdmin" class="fa fa-remove"></span></h3>
+        <div class="inputContainer">
+            <label for="id">Id:</label>
+            <select id="nroId" required> 
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+            </select> 
+        </div>
+        <div class="inputContainer">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" required>  
+                <option value="pelicula">Película</option>
+                <option value="serie">Serie</option>
+                <option value="anime">Anime</option>
+            </select>
+        </div>
+        <div class="inputContainer">
+            <label for="titulo">Título del contenido:</label>
+            <input type="text" id="titulo" name="nombre" autocomplete="off" required>  
+        </div>
+        <div class="inputContainer">
+            <label for="imagen">Imagen:</label>
+            <select id="poster" required>
+              <option value="peliculas.jpg">Imágen película</option>
+              <option value="series.jpg">Imágen serie</option>
+              <option value="anime.jpg">Imágen anime</option>
+            </select>    
+        </div>
+        <div class="inputContainer">
+            <label for="genero">Género:</label>
+            <select id="genero" required>
+                <option value="accion">Acción</option>
+                <option value="comedia">Comedia</option>
+                <option value="drama">Drama</option>
+                <option value="fantasia">Fantasía</option>
+                <option value="infantil">Infantil</option>
+                <option value="romance">Romance</option>
+                <option value="terror">Terror</option>
+            </select>
+        </div>
+        <div class="inputContainer">
+            <label for="estreno">Año de estreno:</label>
+            <input type="number" id="anioEstreno" name="estreno" autocomplete="off" required>  
+        </div>
+        <div class="inputContainer">
+            <label for="duracion">Duración:</label>
+            <input type="number" id="duracion" name="duracion" autocomplete="off" required>  
+        </div>
+        <div class="inputContainer">
+            <label for="rating">Rating inicial:</label>
+            <input type="number" id="rating" name="rating" autocomplete="off" required>  
+        </div>
+        <button type="submit" class="btnEnviar" id="btnAdmin">Subir contenido</button>
+        <h3 class="mrg">Buscá el contenido que quieras eliminar:</h3>
+        <div class="d-inline">
+          <input id="searchBox" class="form-control me-2" type="search" placeholder="Buscar por ID" aria-label="Search">
+          <button id="searchBtn" class="btn btn-outline-success btnBuscar" type="submit">Buscar</button>
+        </div>
+        <div id="resultadoEliminar"></div>
+        <h3 class="mrg">Ver lista de usuarios registrados: <button id="verUsuarioBtn" class="btn btn-outline-success btnBuscar" type="submit">VER</button><button id="ocultarLista" class="btn btn-outline-success btnBuscar" type="submit">X</button></h3>
+        <div id=listaUsuarios></div>
+      </form>   
+    </section>
+
+    <footer> <!--FOOTER-->
+        <div class="footer inputContainer">
+            <p>MovieCouch</p>
+            <p>Dispositivos compatibles | Acuerdo de suscripción | Cancelar suscripción</p>
+            <p>Todos los derechos reservados</p>
+            <p>Creado por: Giselle Pagano</p>
+        </div>
+    </footer>   
+    
+    <script src="https://use.fontawesome.com/a9074f2a41.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script> <!-- jQuery de forma local-->
+    <script src= "js/classes.js"></script>
+    <script src= "js/script.js"></script>
+    <script src= "js/mi-jquery.js"></script>
+  </body>
+</html>
